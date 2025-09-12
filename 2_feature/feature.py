@@ -66,6 +66,7 @@ def get_sro(element_a='0', element_b='1', num_shell=3, element_list=[], neighbor
                 b_neighbor_a_num += b_neighbor_symbol.count(element_a)
 
         # Calculate the SRO value and append it to the SRO list
+        # Calcula as possibilidades de conexoes entre os elementos a e b
         sro = 1 - b_neighbor_a_num/b_neighbor_num/ratio_a
         SRO.append(sro)
 
@@ -103,7 +104,7 @@ def get_pair(element_list=[], neighbor_list={}):
     return PAIR
 
 # Read atomic structure from 'pure.traj'
-atoms_initial = read('pure.traj')
+atoms_initial = read('C:\\Users\\00050786\\OneDrive - Randon SA Implementos e Participacoes\\Documentos\\ML Materials\\PtCoM\\2_feature\\pure.traj')
 
 # Copy initial structure by 3x3x3 to include periodic image
 atoms = atoms_initial * [3,3,3]
@@ -158,7 +159,7 @@ for i in range(13*len(atoms_initial),14*len(atoms_initial)):
     neighbor_multi_list.append(neigh_i_dict)
 
 # Connect to the database and extract features
-db = ase.db.connect('../1_database/ptcocu.db')
+db = ase.db.connect('C:\\Users\\00050786\\OneDrive - Randon SA Implementos e Participacoes\\Documentos\\ML Materials\\PtCoM\\1_database\\ptcocu.db')
 Feature = []
 
 for row in db.select(status='relaxed'):
