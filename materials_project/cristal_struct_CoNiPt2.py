@@ -3,7 +3,7 @@ from mp_api.client import MPRester
 from ase.io import write
 
 # Sua chave de API do Materials Project
-API_KEY = "WY3ZkgxrX91FTzk8J4J1uLTEt2rMg3Kt" 
+API_KEY = key
 # ID do material que você quer baixar
 MATERIAL_ID = "mp-1226004"
 
