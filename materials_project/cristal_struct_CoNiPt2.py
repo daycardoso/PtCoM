@@ -1,9 +1,13 @@
+import os
 import json
-from mp_api.client import MPRester
 from ase.io import write
+from dotenv import load_dotenv
+from mp_api.client import MPRester
+
+load_dotenv()
 
 # Sua chave de API do Materials Project
-API_KEY = key
+API_KEY = os.getenv('MP_KEY')
 # ID do material que você quer baixar
 MATERIAL_ID = "mp-1226004"
 
@@ -38,7 +42,7 @@ structure_object = data[0].structure
 # from ase.io import write
 
 # # Sua chave de API do Materials Project
-# API_KEY = "WY3ZkgxrX91FTzk8J4J1uLTEt2rMg3Kt" 
+# API_KEY = MP_KEY 
 # # ID do material que você quer baixar
 # MATERIAL_ID = "mp-1226004"
 
